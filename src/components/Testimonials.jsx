@@ -117,7 +117,7 @@ export default function Testimonials() {
                   className="text-gray-300 text-lg md:text-xl leading-relaxed italic mb-10" 
                   style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                 >
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
 
                 {/* User Info */}

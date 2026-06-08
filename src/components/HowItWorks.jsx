@@ -51,7 +51,7 @@ export default function HowItWorks() {
               className="text-gray-500 text-lg font-medium leading-relaxed max-w-lg"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
-              We've refined the acquisition process down to four simple, luxurious steps. Your time is valuable; we ensure every minute counts.
+              We&apos;ve refined the acquisition process down to four simple, luxurious steps. Your time is valuable; we ensure every minute counts.
             </p>
 
             <div className="space-y-4 pt-4">

@@ -192,7 +192,7 @@ export default async function ShowroomCars({ searchParams }) {
             </div>
             <h3 className="text-[#0f172a] text-2xl font-bold mb-2">No Matching Vehicles</h3>
             <p className="text-gray-400 max-w-md mb-8">
-              We couldn't find any cars matching your current filters. Try adjusting your search or browse our full inventory.
+              We couldn&apos;t find any cars matching your current filters. Try adjusting your search or browse our full inventory.
             </p>
             <Link 
               href="/showroom" 

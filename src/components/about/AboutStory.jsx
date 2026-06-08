@@ -33,7 +33,7 @@ export default function AboutStory() {
                 className="text-gray-400 text-base leading-relaxed"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                We believe that buying a car should be as exhilarating as driving one. That's why we've focused on creating a transparent, seamless experience that puts our clients first, every step of the way.
+                We believe that buying a car should be as exhilarating as driving one. That&apos;s why we&apos;ve focused on creating a transparent, seamless experience that puts our clients first, every step of the way.
               </p>
             </div>
 

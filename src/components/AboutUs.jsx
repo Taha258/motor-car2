@@ -30,7 +30,7 @@ export default function AboutUs() {
                 className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed max-w-xl"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                At MotorDeal, we don't just sell cars; we deliver dreams. With over a decade of excellence in the luxury automotive industry, we've built a reputation for trust and unparalleled service.
+                At MotorDeal, we don&apos;t just sell cars; we deliver dreams. With over a decade of excellence in the luxury automotive industry, we&apos;ve built a reputation for trust and unparalleled service.
               </p>
               
               <div className="flex flex-wrap gap-4 pt-4">

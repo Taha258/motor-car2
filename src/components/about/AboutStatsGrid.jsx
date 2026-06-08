@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AboutStatsGrid() {
   const stats = [
     { label: 'Experience in Car Sales', value: '10+ Years', type: 'dark' },
@@ -22,10 +24,11 @@ export default function AboutStatsGrid() {
               `}
             >
               {item.type === 'image' ? (
-                <img
+                <Image
                   src={item.image}
                   alt="Gallery"
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-1000"
+                  fill
+                  className="object-cover transform hover:scale-110 transition-transform duration-1000"
                 />
               ) : (
                 <>

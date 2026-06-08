@@ -36,7 +36,7 @@ export default function AboutFounder() {
             </div>
 
             <div className="relative">
-              <div className="absolute -top-8 -left-8 text-8xl text-[#31b56b]/10 leading-none">"</div>
+              <div className="absolute -top-8 -left-8 text-8xl text-[#31b56b]/10 leading-none">&quot;</div>
               <p
                 className="text-gray-500 text-xl font-medium leading-relaxed italic pl-6"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
@@ -50,7 +50,7 @@ export default function AboutFounder() {
                 className="text-gray-400 text-base leading-relaxed"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                Under Ryan Thompson's leadership, MotorDeal has grown from a boutique showroom to a globally recognized name in luxury car exports and domestic sales. His commitment to transparent dealings and high-quality inventory remains the heartbeat of the company.
+                Under Ryan Thompson&apos;s leadership, MotorDeal has grown from a boutique showroom to a globally recognized name in luxury car exports and domestic sales. His commitment to transparent dealings and high-quality inventory remains the heartbeat of the company.
               </p>
               
               <div className="pt-6 border-t border-gray-100">
