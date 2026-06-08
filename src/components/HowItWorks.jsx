@@ -1,3 +1,4 @@
+// src\components\HowItWorks.jsx
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -27,19 +28,19 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-4 bg-[#f8f9fa] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section className="py-16 px-4 bg-[#dedede] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left: Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-[#FAC104] font-bold text-xs uppercase tracking-[0.2em]">
                 <div className="w-8 h-px bg-[#FAC104]" />
                 Process
               </div>
               <h2
-                className="text-[#0f172a] text-4xl md:text-5xl font-extrabold leading-tight uppercase tracking-tight"
+                className="text-[#0f172a] text-2xl md:text-3xl font-bold uppercase tracking-wide"
                 style={{ fontFamily: 'Syne, sans-serif' }}
               >
                 THE EASIEST WAY TO <br />
@@ -48,13 +49,13 @@ export default function HowItWorks() {
             </div>
             
             <p
-              className="text-gray-500 text-lg font-medium leading-relaxed max-w-lg"
+              className="text-gray-500 text-base font-medium leading-relaxed max-w-lg"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               We&apos;ve refined the acquisition process down to four simple, luxurious steps. Your time is valuable; we ensure every minute counts.
             </p>
 
-            <div className="space-y-4 pt-4">
+            <div className="space-y-3 pt-2">
               {['White-glove service', 'Transparent pricing', 'Worldwide delivery'].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#FAC104]/10 flex items-center justify-center">
@@ -65,47 +66,48 @@ export default function HowItWorks() {
               ))}
             </div>
 
+            {/* === BUTTON: #FAC104 GOLD === */}
             <Link
               href="/showroom"
-              className="inline-flex items-center gap-3 bg-[#0f172a] text-white px-8 py-4 rounded-2xl text-sm font-bold hover:bg-[#1e293b] transition-all shadow-lg active:scale-95"
+              className="inline-flex items-center gap-3 bg-[#FAC104] text-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-[#D4A203] transition-all shadow-lg active:scale-95"
             >
               GET STARTED NOW
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          {/* Right: Modern Steps Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
+          {/* Right: Steps Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative">
             {/* Background Accent */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FAC104]/5 to-transparent rounded-[3rem] -m-6" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FAC104]/5 to-transparent rounded-[2rem] -m-4" />
             
             {steps.map((step, index) => (
               <div 
                 key={index} 
-                className="group relative bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:border-[#FAC104]/30 transition-all duration-500 hover:shadow-xl"
+                className="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:border-[#FAC104]/30 transition-all duration-500 hover:shadow-xl"
               >
-                <div className="w-14 h-14 bg-[#f8f9fa] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#FAC104]/10 transition-colors">
+                <div className="w-12 h-12 bg-[#f8f9fa] rounded-xl flex items-center justify-center mb-4 group-hover:bg-[#FAC104]/10 transition-colors">
                   <Image
                     src={step.icon}
                     alt={step.title}
-                    width={28}
-                    height={28}
+                    width={24}
+                    height={24}
                   />
                 </div>
                 <h3
-                  className="text-[#0f172a] text-xl font-bold mb-3 tracking-tight"
+                  className="text-[#0f172a] text-base font-bold mb-2 tracking-tight"
                   style={{ fontFamily: 'Syne, sans-serif' }}
                 >
                   {step.title}
                 </h3>
                 <p
-                  className="text-gray-400 text-sm leading-relaxed font-medium"
+                  className="text-gray-400 text-xs leading-relaxed font-medium"
                   style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                 >
                   {step.description}
                 </p>
                 
-                <div className="absolute top-8 right-8 text-[#0f172a]/5 text-6xl font-black italic">
+                <div className="absolute top-6 right-6 text-[#0f172a]/5 text-4xl font-black italic">
                   0{index + 1}
                 </div>
               </div>

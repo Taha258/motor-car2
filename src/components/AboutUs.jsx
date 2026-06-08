@@ -1,74 +1,108 @@
-import Image from 'next/image';
-
-export default function AboutUs() {
+export default function AboutStats() {
   return (
-    <section className="py-24 px-4 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="group relative bg-[#0f172a] rounded-[3rem] p-10 md:p-20 overflow-hidden shadow-2xl">
-          {/* Decorative background element */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FAC104]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-          
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section 
+      className="py-16 px-4"
+      style={{ backgroundColor: '#dedede' }}
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="bg-[#0f172a] rounded-xl p-8 md:p-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             
-            {/* Left: About Us Content */}
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-2 text-[#FAC104] font-bold text-xs uppercase tracking-[0.2em]">
-                  <div className="w-8 h-px bg-[#FAC104]" />
-                  Our Story
-                </div>
-                <h2
-                  className="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] uppercase tracking-tight"
-                  style={{ fontFamily: 'Syne, sans-serif' }}
-                >
-                  BUILT ON PASSION, <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAC104] to-[#FBDB5C]">FOCUSED ON YOU</span>
-                </h2>
-              </div>
-              
+            {/* Left: About Us */}
+            <div>
               <p
-                className="text-gray-400 text-lg md:text-xl font-medium leading-relaxed max-w-xl"
+                className="text-[#FAC104] text-xs font-bold uppercase tracking-[0.2em] mb-3"
                 style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
-                At MotorDeal, we don&apos;t just sell cars; we deliver dreams. With over a decade of excellence in the luxury automotive industry, we&apos;ve built a reputation for trust and unparalleled service.
+                ABOUT US
               </p>
-              
-              <div className="flex flex-wrap gap-4 pt-4">
-                <div className="px-6 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 text-white text-sm font-bold uppercase tracking-widest">
-                  Est. 2012
-                </div>
-                <div className="px-6 py-3 bg-[#FAC104]/10 backdrop-blur-md rounded-2xl border border-[#FAC104]/20 text-[#FAC104] text-sm font-bold uppercase tracking-widest">
-                  Award Winning
-                </div>
-              </div>
+              <h2
+                className="text-white text-xl md:text-2xl font-bold leading-tight mb-1"
+                style={{ fontFamily: 'Syne, sans-serif' }}
+              >
+                BUILT ON CAR PASSION,
+              </h2>
+              <h2
+                className="text-white text-xl md:text-2xl font-bold leading-tight mb-4"
+                style={{ fontFamily: 'Syne, sans-serif' }}
+              >
+                FOCUSED ON YOUR NEEDS
+              </h2>
+              <p
+                className="text-gray-400 text-sm font-medium leading-relaxed"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+              </p>
             </div>
 
-            {/* Right: Modern Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { label: 'Happy Clients', value: '1000+' },
-                { label: 'Cars Sold', value: '500+' },
-                { label: 'Cars In Stock', value: '300+' },
-                { label: 'Premium Brands', value: '50+' },
-              ].map((stat, i) => (
-                <div 
-                  key={i} 
-                  className="bg-white/5 backdrop-blur-lg rounded-[2rem] p-8 border border-white/5 hover:border-[#FAC104]/30 transition-all duration-500 group/stat"
+            {/* Right: Stats Grid 2x2 with Dividers */}
+            <div className="grid grid-cols-2">
+              
+              {/* Stat 1 - Top Left */}
+              <div className="text-center p-4 border-r border-b border-white/10">
+                <h3
+                  className="text-white text-2xl font-bold leading-tight mb-1"
+                  style={{ fontFamily: 'Syne, sans-serif' }}
                 >
-                  <h3
-                    className="text-white text-4xl md:text-5xl font-extrabold mb-2 group-hover/stat:text-[#FAC104] transition-colors"
-                    style={{ fontFamily: 'Syne, sans-serif' }}
-                  >
-                    {stat.value}
-                  </h3>
-                  <p
-                    className="text-gray-500 text-xs font-bold uppercase tracking-[0.2em]"
-                    style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+                  1000+
+                </h3>
+                <p
+                  className="text-gray-400 text-xs font-medium uppercase tracking-wider"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                >
+                  HAPPY CLIENTS
+                </p>
+              </div>
+
+              {/* Stat 2 - Top Right */}
+              <div className="text-center p-4 border-b border-white/10">
+                <h3
+                  className="text-white text-2xl font-bold leading-tight mb-1"
+                  style={{ fontFamily: 'Syne, sans-serif' }}
+                >
+                  500+
+                </h3>
+                <p
+                  className="text-gray-400 text-xs font-medium uppercase tracking-wider"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                >
+                  CARS SOLD
+                </p>
+              </div>
+
+              {/* Stat 3 - Bottom Left */}
+              <div className="text-center p-4 border-r border-white/10">
+                <h3
+                  className="text-white text-2xl font-bold leading-tight mb-1"
+                  style={{ fontFamily: 'Syne, sans-serif' }}
+                >
+                  300+
+                </h3>
+                <p
+                  className="text-gray-400 text-xs font-medium uppercase tracking-wider"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                >
+                  CARS IN STOCK
+                </p>
+              </div>
+
+              {/* Stat 4 - Bottom Right */}
+              <div className="text-center p-4">
+                <h3
+                  className="text-white text-2xl font-bold leading-tight mb-1"
+                  style={{ fontFamily: 'Syne, sans-serif' }}
+                >
+                  50+
+                </h3>
+                <p
+                  className="text-gray-400 text-xs font-medium uppercase tracking-wider"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                >
+                  CAR BRANDS
+                </p>
+              </div>
+
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+// src\components\Testimonials.jsx
 'use client';
 
 import { useRef } from 'react';
@@ -53,21 +54,21 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-[#0f172a] py-24 px-4 relative overflow-hidden">
+    <section className="bg-[#0f172a] py-16 px-4 relative overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#FAC104]/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col md:flex-row items-end justify-between mb-8 gap-6">
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-[#FAC104] font-bold text-xs uppercase tracking-[0.2em]">
               <div className="w-8 h-px bg-[#FAC104]" />
               Testimonials
             </div>
             <h2
-              className="text-white text-4xl md:text-5xl font-extrabold uppercase tracking-tight"
+              className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wide"
               style={{ fontFamily: 'Syne, sans-serif' }}
             >
               VOICES OF <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAC104] to-[#FBDB5C]">EXCELLENCE</span>
@@ -75,18 +76,18 @@ export default function Testimonials() {
           </div>
           
           {/* Navigation Arrows */}
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             <button
               onClick={() => scroll('left')}
-              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#FAC104] hover:border-[#FAC104] transition-all duration-300 group"
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#FAC104] hover:border-[#FAC104] transition-all duration-300 group"
             >
-              <ChevronLeft className="w-6 h-6 text-white group-hover:scale-110" />
+              <ChevronLeft className="w-4 h-4 text-white group-hover:scale-110" />
             </button>
             <button
               onClick={() => scroll('right')}
-              className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#FAC104] hover:border-[#FAC104] transition-all duration-300 group"
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#FAC104] hover:border-[#FAC104] transition-all duration-300 group"
             >
-              <ChevronRight className="w-6 h-6 text-white group-hover:scale-110" />
+              <ChevronRight className="w-4 h-4 text-white group-hover:scale-110" />
             </button>
           </div>
         </div>
@@ -95,44 +96,44 @@ export default function Testimonials() {
         <div className="overflow-visible">
           <div
             ref={scrollRef}
-            className="flex gap-8 scroll-smooth pb-8"
+            className="flex gap-6 scroll-smooth pb-6"
             style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
-                className="bg-white/5 backdrop-blur-xl border border-white/5 rounded-[2.5rem] p-10 w-[350px] md:w-[450px] flex-shrink-0 hover:border-[#FAC104]/30 transition-all duration-500 shadow-2xl relative"
+                className="bg-white/5 backdrop-blur-xl border border-white/5 rounded-xl p-6 w-[300px] md:w-[380px] flex-shrink-0 hover:border-[#FAC104]/30 transition-all duration-500 shadow-2xl relative"
               >
-                <Quote className="absolute top-10 right-10 w-12 h-12 text-white/5" />
+                <Quote className="absolute top-6 right-6 w-8 h-8 text-white/5" />
                 
                 {/* Stars */}
-                <div className="flex gap-1 mb-8">
+                <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#FAC104] text-[#FAC104]" />
+                    <Star key={i} className="w-3 h-3 fill-[#FAC104] text-[#FAC104]" />
                   ))}
                 </div>
 
                 {/* Review Text */}
                 <p 
-                  className="text-gray-300 text-lg md:text-xl leading-relaxed italic mb-10" 
+                  className="text-gray-300 text-sm leading-relaxed italic mb-6" 
                   style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                 >
                   &quot;{testimonial.text}&quot;
                 </p>
 
                 {/* User Info */}
-                <div className="flex items-center gap-5 pt-8 border-t border-white/5">
-                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-[#FAC104]/20 shadow-lg shadow-[#FAC104]/10">
+                <div className="flex items-center gap-4 pt-4 border-t border-white/5">
+                  <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-[#FAC104]/20 shadow-lg shadow-[#FAC104]/10">
                     <Image 
                       src={testimonial.image} 
                       alt={testimonial.name} 
-                      width={64} 
-                      height={64} 
+                      width={48} 
+                      height={48} 
                       className="object-cover w-full h-full transform hover:scale-110 transition-transform duration-500" 
                     />
                   </div>
                   <div>
-                    <h4 className="text-white text-lg font-bold tracking-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
+                    <h4 className="text-white text-sm font-bold tracking-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
                       {testimonial.name}
                     </h4>
                     <p className="text-[#FAC104] text-xs font-bold uppercase tracking-widest mt-1">

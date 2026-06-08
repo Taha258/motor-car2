@@ -1,3 +1,4 @@
+// src\components\HeroSection.jsx
 'use client';
 
 import { useState, useRef, useEffect, Suspense } from 'react';
@@ -66,74 +67,79 @@ function Dropdown({ label, options, value, onChange, icon: Icon }) {
 function HeroContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  
-  const [carMake, setCarMake]           = useState(searchParams.get('make') || '');
-  const [carType, setCarType]           = useState(searchParams.get('type') || '');
+
+  const [carMake, setCarMake] = useState(searchParams.get('make') || '');
+  const [carType, setCarType] = useState(searchParams.get('type') || '');
   const [carCondition, setCarCondition] = useState(searchParams.get('condition') || '');
-  const [searchQuery, setSearchQuery]   = useState(searchParams.get('q') || '');
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
 
   function handleSearch() {
     const params = new URLSearchParams();
-    if (carMake)            params.set('make', carMake);
-    if (carType)            params.set('type', carType);
-    if (carCondition)       params.set('condition', carCondition);
+    if (carMake) params.set('make', carMake);
+    if (carType) params.set('type', carType);
+    if (carCondition) params.set('condition', carCondition);
     if (searchQuery.trim()) params.set('q', searchQuery.trim());
-    
+
     router.push(`/showroom?${params.toString()}`);
   }
 
   return (
-    <section className="relative w-full h-[750px] md:h-[850px] z-30">
-      {/* Background Image with Parallax-like effect */}
+    <section className="relative w-full h-[750px] md:h-[850px] z-30 overflow-hidden">
+      {/* Background Image - Full Cover */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ backgroundImage: "url('/images/HeroSectionimage.jpg')" }}
       />
-      {/* Professional Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#0f172a]/90" />
+      
+      {/* Dark Overlay - Puri Image Cover */}
+      <div className="absolute inset-0 bg-black/50" />
+      
+      {/* Bottom Gradient - Seamless transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-[300px] bg-gradient-to-t from-[#0f172a] to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 pt-20">
         <div className="max-w-4xl w-full text-center space-y-6">
-          <div className="inline-block px-4 py-1.5 bg-[#FAC104]/20 backdrop-blur-md rounded-full border border-[#FAC104]/30 mb-4 animate-pulse">
-            <span className="text-[#FAC104] text-xs font-bold tracking-[0.2em] uppercase">Premium Car Experience</span>
-          </div>
-          
           <h1
-            className="text-white text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight leading-[1.1]"
-            style={{ fontFamily: 'Syne, sans-serif' }}
+            className="uppercase tracking-tight"
+            style={{
+              fontFamily: "Syne, sans-serif",
+              fontSize: "55px",
+              fontWeight: 650,
+              lineHeight: "70px",
+              color: "#fff",
+            }}
           >
-            DISCOVER YOUR <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAC104] to-[#FBDB5C]">DREAM CAR</span> AT MOTOR
+            Your Ride Awaits at <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FAC104] to-[#FBDB5C]">
+              MotorDeal
+            </span>{" "}
+            Showroom
           </h1>
-          
-          <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto font-medium" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            Experience the pinnacle of luxury and performance. Browse our exclusive collection of world-class automobiles.
-          </p>
 
           {/* Filter Box - VIP Design */}
           <div className="mt-12 w-full bg-white/5 backdrop-blur-xl rounded-[2rem] p-4 md:p-8 border border-white/10 shadow-2xl">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex flex-col md:flex-row gap-4 flex-[2]">
-                <Dropdown 
-                  label="Car Make" 
-                  options={CAR_MAKES} 
-                  value={carMake} 
-                  onChange={setCarMake} 
+                <Dropdown
+                  label="Car Make"
+                  options={CAR_MAKES}
+                  value={carMake}
+                  onChange={setCarMake}
                   icon={Car}
                 />
-                <Dropdown 
-                  label="Car Type" 
-                  options={CAR_TYPES} 
-                  value={carType} 
-                  onChange={setCarType} 
+                <Dropdown
+                  label="Car Type"
+                  options={CAR_TYPES}
+                  value={carType}
+                  onChange={setCarType}
                   icon={Settings}
                 />
-                <Dropdown 
-                  label="Condition" 
-                  options={CAR_CONDITIONS} 
-                  value={carCondition} 
-                  onChange={setCarCondition} 
+                <Dropdown
+                  label="Condition"
+                  options={CAR_CONDITIONS}
+                  value={carCondition}
+                  onChange={setCarCondition}
                   icon={Fuel}
                 />
               </div>
@@ -162,11 +168,6 @@ function HeroContent() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Subtle Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-        <div className="w-1 h-12 rounded-full bg-gradient-to-b from-[#FAC104] to-transparent" />
       </div>
     </section>
   );
